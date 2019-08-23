@@ -1,3 +1,6 @@
+# README
+
+this is my spacevim config.
 
 ## lang#html
 
@@ -15,6 +18,12 @@ npm -g install remark-cli
 npm -g install remark-stringify
 npm install --global prettier
 ```
+
+## lang#cpp
+
+## lang#java
+
+## lang#rust
 
 ## lang#python
 
