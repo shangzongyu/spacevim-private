@@ -3,7 +3,14 @@
 # set spacevim theme. by default colorscheme layer is not loaded,
 # if you want to use more colorscheme, please load the colorscheme
 # layer
-colorscheme = 'gruvbox'
+# molokai
+# onedark
+# jellybeans
+# palenight
+# nord
+# material
+
+colorscheme = 'SpaceVim'
 colorscheme_bg = 'dark'
 # Disable guicolors in basic mode, many terminal do not support 24bit
 # true colors
@@ -12,7 +19,7 @@ enable_guicolors = true
 # Disable statusline separator, if you want to use other value, please
 # install nerd fonts
 # statusline_separator = 'arrow'
-statusline_separator = 'slant'
+statusline_separator = 'arrow'
 
 # tabline
 enable_tabline_filetype_icon = true
@@ -89,12 +96,13 @@ autocomplete_method = 'deoplete'
 snippet_engine = 'ultisnips'
 #enable_ycm = true
 
+# lint
+#lint_engine = 'ale'
+#lint_engine = 'neomake'
+
 # bootstrap function
 bootstrap_before = 'myspacevim#before'
 bootstrap_after = 'myspacevim#after'
-
-# lint
-lint_engine = 'ale'
 
 # Enable autocomplete layer
 [[layers]]
@@ -132,6 +140,7 @@ lint_engine = 'ale'
 [[layers]]
   name = 'lang#python'
   format_on_save = true
+  enabled_linters = ['python', 'flake8']
   python_file_head = [
       '#!/usr/bin/env python',
       '# -*- coding: utf-8 -*-',
@@ -155,7 +164,8 @@ lint_engine = 'ale'
   name = 'colorscheme'
 
 [[layers]]
-  name = 'fzf'
+#  name = 'fzf'
+name = 'leaderf'
 
 [[layers]]
   name = 'format'
@@ -205,6 +215,12 @@ lint_engine = 'ale'
   lint_on_the_fly = false
   lint_on_save = true
   show_cursor_error	= true
+
+[[layers]]
+  name = "incsearch"
+
+[[layers]]
+  name = "ctrlspace"
 
 # [[layers]]
 #    name = "debug"
