@@ -76,7 +76,7 @@ project_rooter_outermost = false
 # - vimfiler (default)
 # - nerdtree
 # - defx
-filemanager = 'defx'
+filemanager = 'nerdtree'
 enable_vimfiler_gitstatus = true
 
 # ycm: for YouCompleteMe
@@ -85,13 +85,16 @@ enable_vimfiler_gitstatus = true
 # deoplete
 # asyncomplete
 # completor
-autocomplete_method = 'ycm'
+autocomplete_method = 'deoplete'
 snippet_engine = 'ultisnips'
-enable_ycm = true
+#enable_ycm = true
 
 # bootstrap function
 bootstrap_before = 'myspacevim#before'
 bootstrap_after = 'myspacevim#after'
+
+# lint
+lint_engine = 'ale'
 
 # Enable autocomplete layer
 [[layers]]
@@ -101,8 +104,9 @@ bootstrap_after = 'myspacevim#after'
 
 [[layers]]
   name = 'shell'
-  default_position = 'buttom'
-  default_height = 30
+  default_position = 'right'
+  #default_position = 'buttom'
+  #default_height = 30
 
 [[layers]]
   name = 'lang#WebAssembly'
@@ -127,6 +131,13 @@ bootstrap_after = 'myspacevim#after'
 
 [[layers]]
   name = 'lang#python'
+  format_on_save = true
+  python_file_head = [
+      '#!/usr/bin/env python',
+      '# -*- coding: utf-8 -*-',
+      '',
+      ''
+  ]
 
 [[layers]]
   name = 'lang#sh'
@@ -167,6 +178,7 @@ bootstrap_after = 'myspacevim#after'
   [layers.override_cmd]
     rust = ['rls']
     go = ['go-langserver', '-mode', 'stdio']
+    c = ["clangd"]
 
 [[layers]]
   name = 'sudo'
@@ -184,3 +196,37 @@ bootstrap_after = 'myspacevim#after'
 
 [[layers]]
   name = 'core#tabline'
+
+# ale
+# neomake
+# syntastic
+[[layers]]
+  name = 'checker'
+  lint_on_the_fly = false
+  lint_on_save = true
+  show_cursor_error	= true
+
+# [[layers]]
+#    name = "debug"
+
+# [[layers]]
+#   name = "tags"
+
+# [[layers]]
+#   name = "gtags"
+#   gtagslabel = "ctags"
+
+# [[custom_plugins]]
+#     name = "Shougo/deoplete.nvim"
+#     merged = false
+
+# [[custom_plugins]]
+#     name = "tbodt/deoplete-tabnine"
+#     merged = false
+
+# [[custom_plugins]]
+#     name = "vim-python/python-syntax"
+#     merged = false
+
+# [[custom_plugins]]
+#     name = "sebdah/vim-delve"
