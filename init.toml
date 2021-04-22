@@ -120,6 +120,9 @@ bootstrap_after = 'myspacevim#after'
   name = 'lang#WebAssembly'
 
 [[layers]]
+  name = "lang#markdown"
+
+[[layers]]
   name = 'lang#c'
   enable_clang_syntax_highlight = true
   [layer.clang_std]
@@ -194,7 +197,10 @@ name = 'leaderf'
   name = 'sudo'
 
 [[layers]]
-  name = 'tool#dash'
+  name = 'tools#dash'
+
+#[[layers]]
+#  name = "tools#zeal"
 
 # core
 [[layers]]
@@ -246,3 +252,4 @@ name = 'leaderf'
 
 # [[custom_plugins]]
 #     name = "sebdah/vim-delve"
+
