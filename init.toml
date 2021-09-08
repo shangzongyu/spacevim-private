@@ -1,41 +1,42 @@
 # All SpaceVim option below [option] section
 [options]
-# set spacevim theme. by default colorscheme layer is not loaded,
-# if you want to use more colorscheme, please load the colorscheme
-# layer
-# molokai
-# onedark
-# jellybeans
-# palenight
-# nord
-# material
+  # set spacevim theme. by default colorscheme layer is not loaded,
+  # if you want to use more colorscheme, please load the colorscheme
+  # layer
+  # molokai
+  # onedark
+  # jellybeans
+  # palenight
+  # nord
+  # material
 
-colorscheme = 'SpaceVim'
-colorscheme_bg = 'dark'
-# Disable guicolors in basic mode, many terminal do not support 24bit
-# true colors
-enable_guicolors = true
+  #colorscheme = 'SpaceVim'
+  colorscheme = 'gruvbox'
+  colorscheme_bg = 'dark'
+  # Disable guicolors in basic mode, many terminal do not support 24bit
+  # true colors
+  enable_guicolors = true
 
-# Disable statusline separator, if you want to use other value, please
-# install nerd fonts
-# statusline_separator = 'arrow'
-statusline_separator = 'arrow'
+  # Disable statusline separator, if you want to use other value, please
+  # install nerd fonts
+  # statusline_separator = 'arrow'
+  statusline_separator = 'arrow'
 
-# tabline
-enable_tabline_filetype_icon = true
-# Enable/Disable show mode on statusline
-enable_statusline_mode = true
+  # tabline
+  enable_tabline_filetype_icon = true
+  # Enable/Disable show mode on statusline
+  enable_statusline_mode = true
 
-# Set SpaceVim buffer index type
-buffer_index_type = 4
-# 0: 1 ➛ ➊
-# 1: 1 ➛ ➀
-# 2: 1 ➛ ⓵
-# 3: 1 ➛ ¹
-# 4: 1 ➛ 1
+  # Set SpaceVim buffer index type
+  buffer_index_type = 4
+  # 0: 1 ➛ ➊
+  # 1: 1 ➛ ➀
+  # 2: 1 ➛ ⓵
+  # 3: 1 ➛ ¹
+  # 4: 1 ➛ 1
 
-# left sections of statusline
-statusline_left_sections = [
+  # left sections of statusline
+  statusline_left_sections = [
     'winnr',
     'major mode',
     'filename',
@@ -43,78 +44,100 @@ statusline_left_sections = [
     'minor mode lighters',
     'version control info',
     'search status'
-]
-# right sections of statusline
-statusline_right_sections = [
+  ]
+  # right sections of statusline
+  statusline_right_sections = [
     'cursorpos',
-    'percentage',
+    'percentasearch_toolsge',
     'input method',
     'date',
     'time'
-]
+  ]
 
-# 'winnr' window number
-# 'syntax checking'
-# 'filename' file name
-# 'fileformat' file format
-# 'major mode'
-# 'minor mode lighters'
-# 'cursorpos' cursor position
-# 'percentage' content range
-# 'date' date
-# 'time' time
-# 'whitespace' line number with trailing space at the end
-# 'battery status' battery status
-# 'input method' input method
-# 'search status' search index
+  # 'winnr' window number
+  # 'syntax checking'
+  # 'filename' file name
+  # 'fileformat' file format
+  # 'major mode'
+  # 'minor mode lighters'
+  # 'cursorpos' cursor position
+  # 'percentage' content range
+  # 'date' date
+  # 'time' time
+  # 'whitespace' line number with trailing space at the end
+  # 'battery status' battery status
+  # 'input method' input method
+  # 'search status' search index
 
-# font
-guifont = 'SourceCodePro Nerd Font Mono:h13'
+  # font
+  guifont = 'SourceCodePro Nerd Font Mono:h13'
 
-# indent
-default_indent = 4
-expand_tab = true
+  # indent
+  default_indent = 4
+  expand_tab = true
 
-# project manage
-project_rooter_patterns = ['.git/', '_darcs/', '.hg/', '.bzr/', '.svn/', '!node_packages/']
-project_rooter_outermost = false
+  # project manage
+  project_rooter_patterns = ['.git/', '_darcs/', '.hg/', '.bzr/', '.svn/', '!node_packages/']
+  project_rooter_outermost = false
 
-# file manager plugins supported in SpaceVim:
-# - vimfiler (default)
-# - nerdtree
-# - defx
-filemanager = 'nerdtree'
-enable_vimfiler_gitstatus = true
+  # file manager plugins supported in SpaceVim:
+  # - vimfiler (default)
+  # - nerdtree
+  # - defx
+  filemanager = 'defx'
+  enable_vimfiler_gitstatus = true
 
-# ycm: for YouCompleteMe
-# neocomplcache
-# coc: coc.nvim which also provides language server protocol feature
-# deoplete
-# asyncomplete
-# completor
-autocomplete_method = 'deoplete'
-snippet_engine = 'ultisnips'
-#enable_ycm = true
+  # ycm: for YouCompleteMe
+  # neocomplcache
+  # coc: coc.nvim which also provides language server protocol feature
+  # deoplete
+  # asyncomplete
+  # completor
+  autocomplete_method = 'coc'
+  snippet_engine = 'ultisnips'
+  #enable_ycm = true
 
-# lint
-#lint_engine = 'ale'
-#lint_engine = 'neomake'
+  # lint
+  #lint_engine = 'ale'
+  lint_engine = 'neomake'
 
-# bootstrap function
-bootstrap_before = 'myspacevim#before'
-bootstrap_after = 'myspacevim#after'
+  # bootstrap function
+  bootstrap_before = 'myspacevim#before'
+  bootstrap_after = 'myspacevim#after'
 
-# Enable autocomplete layer
+# ----------------- SpaceVim 添加的各种 layers ---------------------------------
+
+# 计算器, 日历, 书签等小工具
+[[layers]]
+  name = 'tools'
+
+[[layers]]
+  name = 'tools#dash'
+
+[[layers]]
+  name = "tools#zeal"
+
+[[layers]]
+  name = "tools#mpv"
+  musics_directory = '~/Music'
+
 [[layers]]
   name = 'autocomplete'
   auto-completion-return-key-behavior = 'complete'
   auto-completion-tab-key-behavior = 'smart'
+  #auto_completion_delay = 200
+  #auto_completion_complete_with_key_sequence = "nil"
+  #auto_completion_complete_with_key_sequence_delay = 0.1
 
 [[layers]]
   name = 'shell'
   default_position = 'right'
   #default_position = 'buttom'
   #default_height = 30
+
+[[layers]]
+  name = 'format'
+  format_on_save = false
 
 [[layers]]
   name = 'lang#WebAssembly'
@@ -126,10 +149,10 @@ bootstrap_after = 'myspacevim#after'
   name = 'lang#c'
   enable_clang_syntax_highlight = true
   [layer.clang_std]
-    c = 'c11'
-    cpp = 'c++1z'
-    objc = 'c11'
-    objcpp = 'c++1z'
+  c = 'c11'
+  cpp = 'c++1z'
+  objc = 'c11'
+  objcpp = 'c++1z'
 
 [[layers]]
   name = 'lang#dockerfile'
@@ -145,10 +168,10 @@ bootstrap_after = 'myspacevim#after'
   format_on_save = true
   enabled_linters = ['python', 'flake8']
   python_file_head = [
-      '#!/usr/bin/env python',
-      '# -*- coding: utf-8 -*-',
-      '',
-      ''
+    '#!/usr/bin/env python',
+    '# -*- coding: utf-8 -*-',
+    '',
+    ''
   ]
 
 [[layers]]
@@ -167,14 +190,15 @@ bootstrap_after = 'myspacevim#after'
   name = 'colorscheme'
 
 [[layers]]
-#  name = 'fzf'
-name = 'leaderf'
+  # name = 'fzf'
+  name = 'leaderf'
 
 [[layers]]
-  name = 'format'
+name = 'format'
 
 [[layers]]
   name = 'git'
+  git-plugin = "fugitive"
 
 [[layers]]
   name = 'VersionControl'
@@ -185,22 +209,18 @@ name = 'leaderf'
     'c',
     'cpp',
     'go',
+    'lua'
     'python',
-    'rust'
+    'rust',
+    'sh'
   ]
   [layers.override_cmd]
-    rust = ['rls']
-    go = ['go-langserver', '-mode', 'stdio']
-    c = ["clangd"]
+  rust = ['rls']
+  go = ['go-langserver', '-mode', 'stdio']
+  c = ["clangd"]
 
 [[layers]]
   name = 'sudo'
-
-[[layers]]
-  name = 'tools#dash'
-
-#[[layers]]
-#  name = "tools#zeal"
 
 # core
 [[layers]]
@@ -213,17 +233,16 @@ name = 'leaderf'
 [[layers]]
   name = 'core#tabline'
 
-# ale
-# neomake
-# syntastic
+# 禁用 SpaceVim 的 checkers layer, 让 coc.nvim 来管理
 [[layers]]
   name = 'checker'
+  enable = false
   lint_on_the_fly = false
   lint_on_save = true
-  show_cursor_error	= true
+  show_cursor_error = true
 
 [[layers]]
-  name = "incsearch"
+  name = "incproject_rooter_patternssearch"
 
 [[layers]]
   name = "ctrlspace"
@@ -253,3 +272,71 @@ name = 'leaderf'
 # [[custom_plugins]]
 #     name = "sebdah/vim-delve"
 
+# ----------------- 添加的插件 -------------------------------------------------
+
+# oceanic-next 主题，采用其他的主题可以删除
+[[custom_plugins]]
+  name = "mhartington/oceanic-next"
+  merged = 0
+
+# coc.nvim 核心配置，不要删除
+[[custom_plugins]]
+  name = 'neoclide/coc.nvim'
+  merge = 0
+
+# 优化 coc 的搜索界面
+[[custom_plugins]]
+  name = 'antoinemadec/coc-fzf'
+  branch = 'release'
+
+[[custom_plugins]]
+  name = 'junegunn/fzf.vim'
+
+# 快速搜索文件和 buffer
+[[custom_plugins]]
+    name = "Yggdroot/LeaderF"
+    build = "./install.sh"
+
+# 快速编辑 markdown 的表格
+[[custom_plugins]]
+  name = 'dhruvasagar/vim-table-mode'
+
+# 更加美观的 Tagbar
+[[custom_plugins]]
+  name = 'liuchengxu/vista.vim'
+
+# 更加方便的调节窗口的大小
+[[custom_plugins]]
+  name = 'simeji/winresizer'
+
+# 为 c/cpp 提供基于 lsp 的高亮
+[[custom_plugins]]
+  name = 'jackguo380/vim-lsp-cxx-highlight'
+
+# 从 http://cplusplus.com/ 和 http://cppreference.com/ 获取文档
+[[custom_plugins]]
+  name = 'skywind3000/vim-cppman'
+
+# 利用 git blame 显示当前行的 commit message
+[[custom_plugins]]
+  name = 'rhysd/git-messenger.vim'
+  lazy =  1
+  on_cmd = 'GitMessenger'
+
+# 以悬浮窗口的形式打开终端
+[[custom_plugins]]
+  name = 'voldikss/vim-floaterm'
+
+# 显示搜索的标号
+[[custom_plugins]]
+    name = 'google/vim-searchindex.git'
+
+# ----------------- 尝试的内容 -------------------------------------------------
+
+# debug 框架，尚未完全集成到本配置中
+[[custom_plugins]]
+  name = 'puremourning/vimspector'
+
+# 配合 sourcetrail 配合使用
+[[custom_plugins]]
+  name = 'CoatiSoftware/vim-sourcetrail'
