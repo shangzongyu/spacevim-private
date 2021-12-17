@@ -209,7 +209,6 @@ name = 'format'
     'c',
     'cpp',
     'go',
-    'lua'
     'python',
     'rust',
     'sh'
